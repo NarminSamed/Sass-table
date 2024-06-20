@@ -1,0 +1,51 @@
+$table-colors: (
+  "border-color": #dee2e6,
+  "bg": #fff,
+  "dark": #343a40,
+  "hover-bg": rgba(0, 0, 0, 0.075),
+  "striped-bg": rgba(0, 0, 0, 0.05),
+  "head-light-bg": #fff,
+  "head-light-color": #495057,
+  "head-dark-bg": #343a40,
+  "head-dark-color": #fff,
+  "active-bg": rgba(0, 0, 0, 0.075),
+  "primary-bg": #b8daff,
+  "secondary-bg": #d6d8db,
+  "success-bg": #c3e6cb,
+  "danger-bg": #f5c6cb,
+  "warning-bg": #ffeeba,
+  "info-bg": #bee5eb,
+  "dark-bg": #c6c8ca,
+  "light-bg": #dee2e6,
+  "active-color": #212529,
+  "primary-color": #212529,
+  "secondary-color": #212529,
+  "success-color": #212529,
+  "danger-color": #212529,
+  "warning-color": #212529,
+  "info-color": #212529,
+  "light-color": #212529,
+  "dark-color": #212529
+);
+
+$bg-colors: (
+  "primary": #007bff,
+  "success": #28a745,
+  "warning": #ffc107,
+  "danger": #dc3545,
+  "info": #17a2b8
+);
+
+
+@each $name, $color in $table-colors {
+  .table-#{$name} {
+    background-color: $color;
+  }
+}
+
+
+@each $name, $color in $bg-colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}

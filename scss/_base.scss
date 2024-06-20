@@ -1,0 +1,168 @@
+.table {
+  width: $table-width;
+  margin-bottom: $table-margin-bottom;
+  color: map-get($table-colors, "primary-color");
+  background-color: map-get($table-colors, "bg");
+  border-collapse: collapse;
+  font-family: $font-family-base;
+
+  th, td {
+    padding: $table-padding;
+    vertical-align: top;
+    border-top: $table-border-width solid map-get($table-colors, "border-color");
+    text-align: left;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: $table-border-bottom solid map-get($table-colors, "border-color");
+    text-align: left;
+  }
+
+  tbody + tbody {
+    border-top: $table-border-top solid map-get($table-colors, "border-color");
+  }
+
+  &.table-sm th, &.table-sm td {
+    padding: $table-sm-padding;
+  }
+
+  &.table-bordered {
+    border: $table-border-width solid map-get($table-colors, "border-color");
+
+    th, td {
+      border: $table-border-width solid map-get($table-colors, "border-color");
+    }
+
+    thead th, thead td {
+      border-bottom-width: 2px;
+    }
+  }
+
+  &.table-striped tbody tr:nth-of-type(odd) {
+    background-color: map-get($table-colors, "striped-bg");
+  }
+
+  &.table-hover tbody tr:hover {
+    background-color: map-get($table-colors, "hover-bg");
+  }
+
+  &.table-dark {
+    color: map-get($table-colors, "light-bg");
+    background-color: map-get($table-colors, "dark-color");
+
+    th, td, thead th {
+      border-color: map-get($table-colors, "border-color");
+    }
+
+    &.table-striped tbody tr:nth-of-type(odd) {
+      background-color: map-get($table-colors, "striped-bg");
+    }
+
+    &.table-hover tbody tr:hover {
+      background-color: map-get($table-colors, "hover-bg");
+    }
+  }
+
+  .thead-light th {
+    color: map-get($table-colors, "head-light-color");
+    background-color: map-get($table-colors, "head-light-bg");
+    border-color: map-get($table-colors, "border-color");
+  }
+
+  .thead-dark th {
+    color: map-get($table-colors, "head-dark-color");
+    background-color: map-get($table-colors, "head-dark-bg");
+    border-color: map-get($table-colors, "border-color");
+  }
+
+  .table-active, .table-active > th, .table-active > td {
+    background-color: map-get($table-colors, "active-bg");
+    color: map-get($table-colors, "active-color");
+  }
+
+  .table-primary, .table-primary > th, .table-primary > td {
+    background-color: map-get($table-colors, "primary-bg");
+    color: map-get($table-colors, "primary-color");
+  }
+
+  .table-secondary, .table-secondary > th, .table-secondary > td {
+    background-color: map-get($table-colors, "secondary-bg");
+    color: map-get($table-colors, "secondary-color");
+  }
+
+  .table-success, .table-success > th, .table-success > td {
+    background-color: map-get($table-colors, "success-bg");
+    color: map-get($table-colors, "success-color");
+  }
+
+  .table-danger, .table-danger > th, .table-danger > td {
+    background-color: map-get($table-colors, "danger-bg");
+    color: map-get($table-colors, "danger-color");
+  }
+
+  .table-warning, .table-warning > th, .table-warning > td {
+    background-color: map-get($table-colors, "warning-bg");
+    color: map-get($table-colors, "warning-color");
+  }
+
+  .table-info, .table-info > th, .table-info > td {
+    background-color: map-get($table-colors, "info-bg");
+    color: map-get($table-colors, "info-color");
+  }
+
+  .table-light, .table-light > th, .table-light > td {
+    background-color: map-get($table-colors, "light-bg");
+    color: map-get($table-colors, "light-color");
+  }
+
+  .table-dark, .table-dark > th, .table-dark > td {
+    background-color: map-get($table-colors, "dark-bg");
+    color: map-get($table-colors, "dark-color");
+  }
+
+  .bg-primary, .bg-primary > th, .bg-primary > td {
+    background-color: map-get($bg-colors, "primary") !important;
+    color: map-get($table-colors, "bg") !important;
+  }
+
+  .bg-success, .bg-success > th, .bg-success > td {
+    background-color: map-get($bg-colors, "success") !important;
+    color: map-get($table-colors, "bg") !important;
+  }
+
+  .bg-warning, .bg-warning > th, .bg-warning > td {
+    background-color: map-get($bg-colors, "warning") !important;
+    color: map-get($table-colors, "primary-color") !important;
+  }
+
+  .bg-danger, .bg-danger > th, .bg-danger > td {
+    background-color: map-get($bg-colors, "danger") !important;
+    color: map-get($table-colors, "bg") !important;
+  }
+
+  .bg-info, .bg-info > th, .bg-info > td {
+    background-color: map-get($bg-colors, "info") !important;
+    color: map-get($table-colors, "bg") !important;
+  }
+
+  .table-responsive {
+    display: block;
+    width: $table-width;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+
+  @each $breakpoint in $breakpoints {
+    @include media-breakpoint-up($breakpoint) {
+      .table-responsive-#{$breakpoint} {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+      }
+    }
+  }
+}

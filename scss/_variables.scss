@@ -1,0 +1,30 @@
+$table-width: 100%;
+$table-padding: 0.75rem;
+$table-sm-padding: 0.3rem;
+$table-border-width: 1px;
+$table-margin-bottom: 1rem;
+$table-border-bottom: 2px;
+$table-border-top: 2px;
+
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+$breakpoints: (sm, md, lg, xl);
+$grid-breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+// Mixin: media-breakpoint-up
+@mixin media-breakpoint-up($name) {
+  @if map-has-key($grid-breakpoints, $name) {
+    @media (min-width: map-get($grid-breakpoints, $name)) {
+      @content;
+    }
+  } @else if $name == 'xs' {
+    @content;
+  }
+}
+
+
